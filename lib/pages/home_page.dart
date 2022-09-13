@@ -21,27 +21,30 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               ElevatedButton(
-                  onPressed: () {
-                    Get.to(ProfilePage());
-                  },
-                  child: const Text("Profile")),
-              ElevatedButton(
                 onPressed: () {
                   Get.defaultDialog(
-                      title: "Default Dialog with GetX",
-                      middleText: "Getx Dialog",
+                      title: "Profile Page",
+                      content: const Text(""),
                       actions: [
                         ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(),
-                          onPressed: () {},
-                          icon: const Icon(Icons.thumb_up),
-                          label: const Text("Like"),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green),
+                          onPressed: () {
+                            Get.off(() => const ProfilePage());
+                          },
+                          icon: const Icon(
+                            Icons.done,
+                          ),
+                          label: const Text("Go"),
                         ),
                         ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(),
-                          onPressed: () {},
-                          icon: const Icon(Icons.thumb_down),
-                          label: const Text("Dislike"),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red),
+                          onPressed: () {
+                            Get.back();
+                          },
+                          icon: const Icon(Icons.cancel),
+                          label: const Text("Cancel"),
                         )
                       ]);
                 },
