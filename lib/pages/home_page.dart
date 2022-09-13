@@ -24,7 +24,29 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Get.to(ProfilePage());
                   },
-                  child: const Text("Profile"))
+                  child: const Text("Profile")),
+              ElevatedButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      title: "Default Dialog with GetX",
+                      middleText: "Getx Dialog",
+                      actions: [
+                        ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(),
+                          onPressed: () {},
+                          icon: const Icon(Icons.thumb_up),
+                          label: const Text("Like"),
+                        ),
+                        ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(),
+                          onPressed: () {},
+                          icon: const Icon(Icons.thumb_down),
+                          label: const Text("Dislike"),
+                        )
+                      ]);
+                },
+                child: const Text("Dialog box"),
+              ),
             ],
           ),
         ),
