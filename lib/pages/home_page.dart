@@ -47,6 +47,19 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: const Text("Dialog box"),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.snackbar("Getx Explore", "SnackBAR message",
+                        margin: const EdgeInsets.all(12),
+                        snackPosition: SnackPosition.BOTTOM,
+                        icon: const Icon(
+                          Icons.thumb_up,
+                          color: Colors.white,
+                        ),
+                        colorText: Colors.white,
+                        backgroundColor: Colors.blue);
+                  },
+                  child: const Text("Snack Bar"))
             ],
           ),
         ),
